@@ -1,4 +1,4 @@
-document.querySelectorAll(".ba-image").forEach((element) => {
+document.querySelectorAll(".comparison-slider").forEach((element) => {
     const slider = document.createElement("div");
     const resizeElement = element.getElementsByTagName("figure")[1];
     if (!resizeElement) return;

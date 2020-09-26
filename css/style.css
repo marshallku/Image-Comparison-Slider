@@ -20,7 +20,7 @@ body {
 }
 
 /* image comparison slider */
-.ba-image {
+.comparison-slider {
     position: relative;
     width: 100%;
     margin: auto;
@@ -29,7 +29,7 @@ body {
     touch-action: pan-x;
 }
 
-.ba-image > figure:last-of-type {
+.comparison-slider > figure:last-of-type {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@ body {
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 }
 
-.ba-image > figure > img {
+.comparison-slider > figure > img {
     width: 100%;
     height: 100%;
     display: block;
@@ -45,7 +45,7 @@ body {
     pointer-events: none;
 }
 
-.ba-image > figure > figcaption {
+.comparison-slider > figure > figcaption {
     position: absolute;
     bottom: 0;
     display: inline-block;
@@ -59,20 +59,20 @@ body {
     transition: opacity 0.35s, transform 0.35s;
 }
 
-.ba-image > figure:last-of-type > figcaption {
+.comparison-slider > figure:last-of-type > figcaption {
     right: 0;
 }
 
-.ba-image > figure > figcaption.hide {
+.comparison-slider > figure > figcaption.hide {
     opacity: 0;
     transform: translate3d(-10px, 0, 0);
 }
 
-.ba-image > figure:last-of-type > figcaption.hide {
+.comparison-slider > figure:last-of-type > figcaption.hide {
     transform: translate3d(10px, 0, 0);
 }
 
-.ba-image > .slider {
+.comparison-slider > .slider {
     position: absolute;
     top: calc(50% - 20px);
     left: 50%;
@@ -89,15 +89,15 @@ body {
     cursor: grab;
 }
 
-.ba-image.dragging,
-.ba-image.dragging > .slider {
+.comparison-slider.dragging,
+.comparison-slider.dragging > .slider {
     cursor: grabbing;
 }
 
-.ba-image.dragging > .slider {
+.comparison-slider.dragging > .slider {
     background: #d2abff;
 }
 
-.ba-image > .slider > svg {
+.comparison-slider > .slider > svg {
     pointer-events: none;
 }
