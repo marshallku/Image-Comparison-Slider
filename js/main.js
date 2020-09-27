@@ -18,7 +18,7 @@ document.querySelectorAll(".comparison-slider").forEach((element) => {
                 ticking = false;
 
                 // sliding image
-                const clientX = event.clientX || event.touches[0].clientX;
+                const clientX = event.clientX ?? event.touches[0].clientX;
                 const x = clientX - element.offsetLeft;
                 let percentage = ((x / element.offsetWidth) * 10000) / 100;
 
