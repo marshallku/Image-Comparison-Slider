@@ -2,10 +2,10 @@ document.querySelectorAll(".comparison-slider").forEach((element) => {
     const slider = document.createElement("div");
     const resizeElement = element.getElementsByTagName("figure")[1];
     if (!resizeElement) return;
-    const figcaption = {
-        first: element.getElementsByTagName("figcaption")[0],
-        second: element.getElementsByTagName("figcaption")[1],
-    };
+    const captions = [
+        element.getElementsByTagName("figcaption")[0],
+        element.getElementsByTagName("figcaption")[1],
+    ];
     const arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
@@ -33,22 +33,19 @@ document.querySelectorAll(".comparison-slider").forEach((element) => {
                 resizeElement.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
 
                 // hiding figcaption
-                if (figcaption.first) {
-                    if (x <= figcaption.first.offsetWidth) {
-                        figcaption.first.classList.add("hide");
+                if (captions[0]) {
+                    if (x <= captions[0].offsetWidth) {
+                        captions[0].classList.add("hide");
                     } else {
-                        figcaption.first.classList.remove("hide");
+                        captions[0].classList.remove("hide");
                     }
                 }
 
-                if (figcaption.second) {
-                    if (
-                        element.offsetWidth - x <=
-                        figcaption.second.offsetWidth
-                    ) {
-                        figcaption.second.classList.add("hide");
+                if (captions[1]) {
+                    if (element.offsetWidth - x <= captions[1].offsetWidth) {
+                        captions[1].classList.add("hide");
                     } else {
-                        figcaption.second.classList.remove("hide");
+                        captions[1].classList.remove("hide");
                     }
                 }
             });
